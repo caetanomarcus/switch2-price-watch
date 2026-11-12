@@ -39,6 +39,12 @@ HEADERS = {
     "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
 }
 
+# A API pública do Mercado Livre bloqueia alguns ranges de IP de datacenter
+# (incluindo os dos runners do GitHub Actions) com 403 genérico, independente
+# de User-Agent. Usamos um header de Accept específico de API como última
+# tentativa; se continuar bloqueando, é bloqueio por IP mesmo, não por header.
+ML_API_HEADERS = {**HEADERS, "Accept": "application/json"}
+
 REQUEST_TIMEOUT = 20
 MAX_PAGES_PER_STORE = 3  # limita o número de páginas de busca por loja
 
@@ -87,11 +93,13 @@ def _save_debug(name: str, text: str) -> None:
     (DEBUG_HTML_DIR / f"{name}.html").write_text(text, encoding="utf-8")
 
 
-def _get_raw(url: str, debug_name: Optional[str] = None) -> Optional[requests.Response]:
+def _get_raw(
+    url: str, debug_name: Optional[str] = None, headers: Optional[dict] = None
+) -> Optional[requests.Response]:
     """GET que sempre salva o corpo em modo debug, mesmo em erro HTTP
     (útil pra inspecionar páginas de bloqueio/challenge das lojas)."""
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+        resp = requests.get(url, headers=headers or HEADERS, timeout=REQUEST_TIMEOUT)
         if debug_name:
             _save_debug(debug_name, resp.text)
         resp.raise_for_status()
@@ -108,8 +116,10 @@ def _get(url: str, debug_name: Optional[str] = None) -> Optional[BeautifulSoup]:
     return BeautifulSoup(resp.text, "html.parser")
 
 
-def _get_json(url: str, debug_name: Optional[str] = None) -> Optional[dict]:
-    resp = _get_raw(url, debug_name=debug_name)
+def _get_json(
+    url: str, debug_name: Optional[str] = None, headers: Optional[dict] = None
+) -> Optional[dict]:
+    resp = _get_raw(url, debug_name=debug_name, headers=headers)
     if resp is None:
         return None
     try:
@@ -139,7 +149,7 @@ def scrape_mercadolivre() -> list[Listing]:
             "https://api.mercadolibre.com/sites/MLB/search"
             f"?q={requests.utils.quote(query)}&limit={limit}&offset={offset}"
         )
-        data = _get_json(url, debug_name=f"mercadolivre_api_page{page}")
+        data = _get_json(url, debug_name=f"mercadolivre_api_page{page}", headers=ML_API_HEADERS)
         if not data:
             break
 
