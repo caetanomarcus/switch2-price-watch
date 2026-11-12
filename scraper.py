@@ -80,58 +80,81 @@ DEBUG_HTML_DIR = Path(__file__).parent / "debug_html"
 DEBUG_MODE = __import__("os").environ.get("SCRAPER_DEBUG") == "1"
 
 
-def _get(url: str, debug_name: Optional[str] = None) -> Optional[BeautifulSoup]:
+def _save_debug(name: str, text: str) -> None:
+    if not DEBUG_MODE:
+        return
+    DEBUG_HTML_DIR.mkdir(parents=True, exist_ok=True)
+    (DEBUG_HTML_DIR / f"{name}.html").write_text(text, encoding="utf-8")
+
+
+def _get_raw(url: str, debug_name: Optional[str] = None) -> Optional[requests.Response]:
+    """GET que sempre salva o corpo em modo debug, mesmo em erro HTTP
+    (útil pra inspecionar páginas de bloqueio/challenge das lojas)."""
     try:
         resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+        if debug_name:
+            _save_debug(debug_name, resp.text)
         resp.raise_for_status()
-        if DEBUG_MODE and debug_name:
-            DEBUG_HTML_DIR.mkdir(parents=True, exist_ok=True)
-            (DEBUG_HTML_DIR / f"{debug_name}.html").write_text(resp.text, encoding="utf-8")
-        return BeautifulSoup(resp.text, "html.parser")
+        return resp
     except requests.RequestException as e:
         print(f"[WARN] Falha ao buscar {url}: {e}", file=sys.stderr)
+        return None
+
+
+def _get(url: str, debug_name: Optional[str] = None) -> Optional[BeautifulSoup]:
+    resp = _get_raw(url, debug_name=debug_name)
+    if resp is None:
+        return None
+    return BeautifulSoup(resp.text, "html.parser")
+
+
+def _get_json(url: str, debug_name: Optional[str] = None) -> Optional[dict]:
+    resp = _get_raw(url, debug_name=debug_name)
+    if resp is None:
+        return None
+    try:
+        return resp.json()
+    except ValueError as e:
+        print(f"[WARN] Resposta não é JSON válido em {url}: {e}", file=sys.stderr)
         return None
 
 
 # ---------------------------------------------------------------------------
 # Mercado Livre
 # ---------------------------------------------------------------------------
+# A página HTML de busca (lista.mercadolivre.com.br) retorna uma página de
+# "tráfego suspeito" (bot-check) pra requisições simples via requests, sem
+# executar JS. A API pública de busca do Mercado Livre, usada pelo próprio
+# site e por qualquer integrador, não tem esse bloqueio e já devolve JSON
+# estruturado com preço atual e preço original.
 def scrape_mercadolivre() -> list[Listing]:
     store = "Mercado Livre"
     listings: list[Listing] = []
-    base = "https://lista.mercadolivre.com.br/jogo-nintendo-switch-2"
+    query = "nintendo switch 2 jogo"
+    limit = 50
 
     for page in range(MAX_PAGES_PER_STORE):
-        offset = page * 50 + 1
-        url = base if page == 0 else f"{base}_Desde_{offset}"
-        soup = _get(url, debug_name=f"mercadolivre_page{page}")
-        if not soup:
+        offset = page * limit
+        url = (
+            "https://api.mercadolibre.com/sites/MLB/search"
+            f"?q={requests.utils.quote(query)}&limit={limit}&offset={offset}"
+        )
+        data = _get_json(url, debug_name=f"mercadolivre_api_page{page}")
+        if not data:
             break
 
-        items = soup.select("li.ui-search-layout__item")
-        if not items:
+        results = data.get("results", [])
+        if not results:
             break
 
-        for item in items:
-            title_el = item.select_one("h2.ui-search-item__title, h3.poly-component__title")
-            link_el = item.select_one("a.ui-search-link, a.poly-component__title")
-            price_el = item.select_one("span.andes-money-amount__fraction")
-            original_el = item.select_one(
-                "s.andes-money-amount--previous span.andes-money-amount__fraction"
-            )
-
-            if not title_el or not link_el or not price_el:
-                continue
-
-            title = title_el.get_text(strip=True)
+        for item in results:
+            title = item.get("title", "")
             if "switch" not in title.lower():
                 continue
 
-            url_item = link_el.get("href", "")
-            price = _to_float_brl(price_el.get_text(strip=True))
-            original = (
-                _to_float_brl(original_el.get_text(strip=True)) if original_el else None
-            )
+            price = item.get("price")
+            original = item.get("original_price")
+            url_item = item.get("permalink", "")
 
             if price is None:
                 continue
@@ -141,11 +164,16 @@ def scrape_mercadolivre() -> list[Listing]:
                     store=store,
                     title=title,
                     url=url_item,
-                    price=price,
-                    original_price=original,
-                    discount_pct=_discount(price, original),
+                    price=float(price),
+                    original_price=float(original) if original else None,
+                    discount_pct=_discount(float(price), float(original) if original else None),
                 )
             )
+
+        paging = data.get("paging", {})
+        total = paging.get("total", 0)
+        if offset + limit >= total:
+            break
         time.sleep(1)
 
     return listings
@@ -154,47 +182,60 @@ def scrape_mercadolivre() -> list[Listing]:
 # ---------------------------------------------------------------------------
 # Kabum
 # ---------------------------------------------------------------------------
+# A página de busca da Kabum é renderizada via Next.js e os cards de produto
+# só existem depois da hidratação em JS - não aparecem nas classes CSS do
+# HTML estático. Porém a página embute os dados completos (inclusive preço
+# com e sem desconto) num <script id="__NEXT_DATA__"> com JSON, que é o que
+# o React usa pra hidratar. Lemos esse JSON direto, é bem mais estável do
+# que depender de nomes de classe.
 def scrape_kabum() -> list[Listing]:
     store = "Kabum"
     listings: list[Listing] = []
     url = "https://www.kabum.com.br/busca/nintendo-switch-2-jogo"
 
-    soup = _get(url, debug_name="kabum")
-    if not soup:
+    resp = _get_raw(url, debug_name="kabum")
+    if not resp:
         return listings
 
-    cards = soup.select("[data-testid='product-card']")
-    for card in cards:
-        title_el = card.select_one("[data-testid='product-card::name'], .nameCard")
-        link_el = card if card.name == "a" else card.find_parent("a")
-        price_el = card.select_one("[data-testid='price-value']")
-        original_el = card.select_one("[data-testid='old-price-value'], .oldPriceCard")
+    match = re.search(
+        r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', resp.text, re.DOTALL
+    )
+    if not match:
+        print("[WARN] Kabum: __NEXT_DATA__ não encontrado na página", file=sys.stderr)
+        return listings
 
-        if not title_el or not price_el:
-            continue
+    try:
+        next_data = json.loads(match.group(1))
+        items = next_data["props"]["pageProps"]["data"]["catalogServer"]["data"]
+    except (json.JSONDecodeError, KeyError, TypeError) as e:
+        print(f"[WARN] Kabum: estrutura do __NEXT_DATA__ mudou ({e})", file=sys.stderr)
+        return listings
 
-        title = title_el.get_text(strip=True)
+    for item in items:
+        title = item.get("name", "")
         if "switch" not in title.lower():
             continue
 
-        href = link_el.get("href", "") if link_el else ""
-        if href and href.startswith("/"):
-            href = "https://www.kabum.com.br" + href
+        code = item.get("code")
+        friendly_name = item.get("friendlyName", "")
+        href = f"https://www.kabum.com.br/produto/{code}/{friendly_name}" if code else ""
 
-        price = _to_float_brl(price_el.get_text(strip=True))
-        original = _to_float_brl(original_el.get_text(strip=True)) if original_el else None
+        price_table = item.get("price") or 0  # preço "de tabela"
+        price_final = item.get("priceWithDiscount") or price_table  # preço com desconto aplicado
 
-        if price is None:
+        if not price_final:
             continue
+
+        original = price_table if price_table and price_table > price_final else None
 
         listings.append(
             Listing(
                 store=store,
                 title=title,
                 url=href,
-                price=price,
-                original_price=original,
-                discount_pct=_discount(price, original),
+                price=float(price_final),
+                original_price=float(original) if original else None,
+                discount_pct=_discount(float(price_final), float(original) if original else None),
             )
         )
 
