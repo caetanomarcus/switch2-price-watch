@@ -1,4 +1,896 @@
 {
-  "games": {},
-  "last_updated": "2026-11-12T10:27:59.322683+00:00"
+  "games": {
+    "Kabum::jogo-metroid-prime-4-beyond-nintendo-switch-2-edition-nt000063nsw": {
+      "title": "Jogo Metroid Prime 4: Beyond Nintendo Switch 2 Edition - NT000063NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/953949/jogo-metroid-prime-4-beyond-nintendo-switch-2-edition-nt000063nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 369.9,
+          "original_price": 397.74,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 369.9
+    },
+    "Kabum::jogo-metroid-ravenous-nintendo-switch-2-nsca10000088fgr": {
+      "title": "Jogo Metroid Ravenous, Nintendo Switch 2 - NSCA10000088FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1087864/jogo-metroid-ravenous-nintendo-switch-2-nsca10000088fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 409.12,
+          "original_price": 439.91,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 409.12
+    },
+    "Kabum::jogo-hyrule-warriors-age-of-imprisonment-para-nintendo-switch-2-nt000060nsw": {
+      "title": "Jogo Hyrule Warriors: Age of Imprisonment para Nintendo Switch 2- NT000060NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/942942/jogo-hyrule-warriors-age-of-imprisonment-para-nintendo-switch-2-nt000060nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 452.85,
+          "original_price": 486.94,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 452.85
+    },
+    "Kabum::jogo-star-fox-para-nintendo-switch-2-nsca10000028fgr": {
+      "title": "Jogo Star Fox para Nintendo Switch 2 - NSCA10000028FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1041003/jogo-star-fox-para-nintendo-switch-2-nsca10000028fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 368.56,
+          "original_price": 396.3,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 368.56
+    },
+    "Kabum::bundle-console-nintendo-switch-2-jogo-mario-kart-world": {
+      "title": "Bundle Console Nintendo Switch 2 + Jogo Mario Kart World",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1089337/bundle-console-nintendo-switch-2-jogo-mario-kart-world",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 4417.06,
+          "original_price": 4699.0,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 4417.06
+    },
+    "Kabum::jogo-indiana-jones-e-o-grande-c-rculo-nintendo-switch-2-ms000001nsw": {
+      "title": "Jogo Indiana Jones e o Grande Círculo, Nintendo Switch 2 - MS000001NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1020031/jogo-indiana-jones-e-o-grande-circulo-nintendo-switch-2-ms000001nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 418.41,
+          "original_price": 449.9,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 418.41
+    },
+    "Kabum::jogo-xenoblade-chronicles-2-nintendo-switch-2-edition-nintendo-switch-2-nsca10000073fgr": {
+      "title": "Jogo Xenoblade Chronicles 2: Nintendo Switch 2 Edition, Nintendo Switch 2 - NSCA10000073FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1065225/jogo-xenoblade-chronicles-2-nintendo-switch-2-edition-nintendo-switch-2-nsca10000073fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 408.27,
+          "original_price": 453.63,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 408.27
+    },
+    "Kabum::jogo-street-fighter-6-years-1-2-fighters-edition-nintendo-switch-2": {
+      "title": "Jogo STREET FIGHTER 6 Years 1-2 Fighters Edition, Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/779794/jogo-street-fighter-6-years-1-2-fighters-edition-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 379.78,
+          "original_price": 408.37,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 379.78
+    },
+    "Kabum::jogo-minecraft-nintendo-switch-2-nsca10000079fgr": {
+      "title": "Jogo Minecraft, Nintendo Switch 2 - NSCA10000079FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1072049/jogo-minecraft-nintendo-switch-2-nsca10000079fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 185.07,
+          "original_price": 205.63,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 185.07
+    },
+    "Kabum::jogo-kirby-air-riders-nintendo-switch-2-edition-nt000058nsw": {
+      "title": "Jogo Kirby Air Riders Nintendo Switch 2 Edition - NT000058NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/948402/jogo-kirby-air-riders-nintendo-switch-2-edition-nt000058nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 426.2,
+          "original_price": 458.28,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 426.2
+    },
+    "Kabum::jogo-final-fantasy-vii-rebirth-standard-edition-nintendo-switch-2-nsca10000027fgr": {
+      "title": "Jogo Final Fantasy VII Rebirth Standard Edition, Nintendo Switch 2 - NSCA10000027FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1038260/jogo-final-fantasy-vii-rebirth-standard-edition-nintendo-switch-2-nsca10000027fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 278.07,
+          "original_price": 299.0,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 278.07
+    },
+    "Kabum::jogo-super-mario-galaxy-super-mario-galaxy-2-nintendo-switch-nt000059nsw": {
+      "title": "Jogo SUPER MARIO GALAXY + SUPER MARIO GALAXY 2, Nintendo Switch - NT000059NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/937123/jogo-super-mario-galaxy-super-mario-galaxy-2-nintendo-switch-nt000059nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 415.9,
+          "original_price": 447.2,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 415.9
+    },
+    "Kabum::jogo-elden-ring-tarnished-edition-nintendo-switch-2-nsca10000043fgr": {
+      "title": "Jogo Elden Ring: Tarnished Edition, Nintendo Switch 2 - NSCA10000043FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1065226/jogo-elden-ring-tarnished-edition-nintendo-switch-2-nsca10000043fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 449.1,
+          "original_price": 499.0,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 449.1
+    },
+    "Kabum::jogo-yakuza-0-director-s-cut-nintendo-switch-2-sg000088nsw": {
+      "title": "Jogo Yakuza 0 Director's Cut, Nintendo Switch 2 - SG000088NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/908154/jogo-yakuza-0-director-s-cut-nintendo-switch-2-sg000088nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 288.21,
+          "original_price": 320.23,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 288.21
+    },
+    "Kabum::jogo-pac-man-world-2-re-pac-nintendo-switch-nb000260nsw": {
+      "title": "Jogo PAC MAN WORLD 2 Re-PAC, Nintendo switch - NB000260NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/948731/jogo-pac-man-world-2-re-pac-nintendo-switch-nb000260nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 233.1,
+          "original_price": 245.37,
+          "discount_pct": 5.0
+        }
+      ],
+      "lowest_price_ever": 233.1
+    },
+    "Kabum::jogo-minecraft-dungeons-ii-deluxe-edition-nintendo-switch-2-nsca10000036fgr": {
+      "title": "Jogo Minecraft Dungeons II: Deluxe Edition, Nintendo Switch 2 - NSCA10000036FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1062740/jogo-minecraft-dungeons-ii-deluxe-edition-nintendo-switch-2-nsca10000036fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 297.52,
+          "original_price": 319.91,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 297.52
+    },
+    "Kabum::jogo-granblue-fantasy-relink-endless-ragnarok-nintendo-switch-2-nsca10000031fgr": {
+      "title": "Jogo Granblue Fantasy: Relink Endless Ragnarok, Nintendo Switch 2 - NSCA10000031FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1060744/jogo-granblue-fantasy-relink-endless-ragnarok-nintendo-switch-2-nsca10000031fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 332.1,
+          "original_price": 369.0,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 332.1
+    },
+    "Kabum::jogo-pok-mon-pokopia-digital-nintendo-switch-2": {
+      "title": "Jogo Pokémon Pokopia Digital Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1034026/jogo-pokemon-pokopia-digital-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 782.09,
+          "original_price": 789.99,
+          "discount_pct": 1.0
+        }
+      ],
+      "lowest_price_ever": 782.09
+    },
+    "Kabum::jogo-lego-batman-o-legado-do-cavaleiros-das-trevas-nintendo-switch-2-nsca10000052fgr": {
+      "title": "Jogo LEGO Batman O Legado do Cavaleiros das Trevas Nintendo Switch 2 - NSCA10000052FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1074004/jogo-lego-batman-o-legado-do-cavaleiros-das-trevas-nintendo-switch-2-nsca10000052fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 449.0,
+          "original_price": 498.89,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 449.0
+    },
+    "Kabum::jogo-onimusha-way-of-the-sword-nintendo-switch-2-nsca10000042fgr": {
+      "title": "Jogo Onimusha: Way of the Sword, Nintendo Switch 2 - NSCA10000042FGR",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1062465/jogo-onimusha-way-of-the-sword-nintendo-switch-2-nsca10000042fgr",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 341.91,
+          "original_price": 379.9,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 341.91
+    },
+    "Kabum::jogo-resident-evil-requiem-para-nintendo-switch-2-cp000037nsw": {
+      "title": "Jogo RESIDENT EVIL REQUIEM para Nintendo Switch 2 - CP000037NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1002659/jogo-resident-evil-requiem-para-nintendo-switch-2-cp000037nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 395.1,
+          "original_price": 424.84,
+          "discount_pct": 7.0
+        }
+      ],
+      "lowest_price_ever": 395.1
+    },
+    "Kabum::jogo-pokemon-pokopia-nintendo-switch-2": {
+      "title": "Jogo Pokemon Pokopia Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1015055/jogo-pokemon-pokopia-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 989.99,
+          "original_price": 999.99,
+          "discount_pct": 1.0
+        }
+      ],
+      "lowest_price_ever": 989.99
+    },
+    "Kabum::jogo-animal-crossing-new-horizons-nintendo-switch-2": {
+      "title": "Jogo Animal Crossing New Horizons Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007877/jogo-animal-crossing-new-horizons-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 1217.69,
+          "original_price": 1229.99,
+          "discount_pct": 1.0
+        }
+      ],
+      "lowest_price_ever": 1217.69
+    },
+    "Kabum::jogo-the-legend-of-zelda-breath-of-the-wild-nintendo-switch-2": {
+      "title": "Jogo The Legend Of Zelda Breath Of The Wild Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007866/jogo-the-legend-of-zelda-breath-of-the-wild-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 968.19,
+          "original_price": 1029.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 968.19
+    },
+    "Kabum::jogo-star-wars-outlaws-gold-edition-nintendo-switch-2-ub000080nsw": {
+      "title": "Jogo Star Wars Outlaws Gold Edition, Nintendo Switch 2 - UB000080NSW",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/904413/jogo-star-wars-outlaws-gold-edition-nintendo-switch-2-ub000080nsw",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 371.91,
+          "original_price": 413.23,
+          "discount_pct": 10.0
+        }
+      ],
+      "lowest_price_ever": 371.91
+    },
+    "Kabum::jogo-trails-in-the-sky-2nd-chapter-nintendo-switch-2": {
+      "title": "Jogo Trails In The Sky 2nd Chapter Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1075748/jogo-trails-in-the-sky-2nd-chapter-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 1352.88,
+          "original_price": 1380.49,
+          "discount_pct": 2.0
+        }
+      ],
+      "lowest_price_ever": 1352.88
+    },
+    "Kabum::jogo-donkey-kong-bananza-nintendo-switch-2": {
+      "title": "Jogo Donkey Kong Bananza Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007855/jogo-donkey-kong-bananza-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 1107.39,
+          "original_price": 1129.99,
+          "discount_pct": 2.0
+        }
+      ],
+      "lowest_price_ever": 1107.39
+    },
+    "Kabum::jogo-super-mario-bros-wonder-edition-meetup-in-bellabel-park-nintendo-switch-2": {
+      "title": "Jogo Super Mario Bros Wonder Edition Meetup In Bellabel Park Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1047233/jogo-super-mario-bros-wonder-edition-meetup-in-bellabel-park-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 1672.18,
+          "original_price": 1723.9,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 1672.18
+    },
+    "Kabum::jogo-the-legend-of-zelda-tears-of-the-kingdom-edition-nintendo-switch-2": {
+      "title": "Jogo The Legend Of Zelda Tears Of The Kingdom Edition Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1075744/jogo-the-legend-of-zelda-tears-of-the-kingdom-edition-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 999.99,
+          "original_price": null,
+          "discount_pct": null
+        }
+      ],
+      "lowest_price_ever": 999.99
+    },
+    "Kabum::jogo-cyberpunk-2077-ultimate-edition-nintendo-switch-2": {
+      "title": "Jogo Cyberpunk 2077 Ultimate Edition Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007867/jogo-cyberpunk-2077-ultimate-edition-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 1163.99,
+          "original_price": 1199.99,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 1163.99
+    },
+    "Kabum::jogo-super-mario-party-jamboree-jamboree-tv-nintendo-switch-2": {
+      "title": "Jogo Super Mario Party Jamboree + Jamboree Tv Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007857/jogo-super-mario-party-jamboree-jamboree-tv-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 2504.69,
+          "original_price": 2529.99,
+          "discount_pct": 1.0
+        }
+      ],
+      "lowest_price_ever": 2504.69
+    },
+    "Kabum::jogo-cobra-kai-2-dojos-rising-nintendo-switch": {
+      "title": "Jogo Cobra Kai 2: Dojos Rising Nintendo Switch",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/943143/jogo-cobra-kai-2-dojos-rising-nintendo-switch",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 299.0,
+          "original_price": null,
+          "discount_pct": null
+        }
+      ],
+      "lowest_price_ever": 299.0
+    },
+    "Kabum::jogo-luigis-mansion-2-hd-nintendo-switch": {
+      "title": "Jogo Luigis Mansion 2 Hd Nintendo Switch",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/994648/jogo-luigis-mansion-2-hd-nintendo-switch",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 604.79,
+          "original_price": 629.99,
+          "discount_pct": 4.0
+        }
+      ],
+      "lowest_price_ever": 604.79
+    },
+    "Kabum::jogo-splatoon-2-nintendo-switch": {
+      "title": "Jogo Splatoon 2 Nintendo Switch",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/995509/jogo-splatoon-2-nintendo-switch",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 607.99,
+          "original_price": 639.99,
+          "discount_pct": 5.0
+        }
+      ],
+      "lowest_price_ever": 607.99
+    },
+    "Kabum::jogo-monster-hunter-stories-2-wings-of-ruin-nintendo-switch": {
+      "title": "Jogo Monster Hunter Stories 2 Wings Of Ruin Nintendo Switch",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/995501/jogo-monster-hunter-stories-2-wings-of-ruin-nintendo-switch",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 607.99,
+          "original_price": 639.99,
+          "discount_pct": 5.0
+        }
+      ],
+      "lowest_price_ever": 607.99
+    },
+    "Kabum::jogo-cronos-the-new-dawn-nintendo-switch-2": {
+      "title": "Jogo Cronos The New Dawn Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007876/jogo-cronos-the-new-dawn-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 614.39,
+          "original_price": 639.99,
+          "discount_pct": 4.0
+        }
+      ],
+      "lowest_price_ever": 614.39
+    },
+    "Kabum::jogo-yakuza-kiwami-2-nintendo-switch-2": {
+      "title": "Jogo Yakuza Kiwami 2 Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007869/jogo-yakuza-kiwami-2-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 507.59,
+          "original_price": 539.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 507.59
+    },
+    "Kabum::jogo-little-nightmares-3-nintendo-switch-2": {
+      "title": "Jogo Little Nightmares 3 Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007860/jogo-little-nightmares-3-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 507.59,
+          "original_price": 539.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 507.59
+    },
+    "Kabum::jogo-yakuza-kiwami-nintendo-switch-2": {
+      "title": "Jogo Yakuza Kiwami Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007852/jogo-yakuza-kiwami-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 507.59,
+          "original_price": 539.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 507.59
+    },
+    "Kabum::jogo-hogwarts-legacy-nintendo-switch-2": {
+      "title": "Jogo Hogwarts Legacy Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007854/jogo-hogwarts-legacy-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 601.59,
+          "original_price": 639.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 601.59
+    },
+    "Kabum::jogo-dynasty-warriors-origins-nintendo-switch-2": {
+      "title": "Jogo Dynasty Warriors Origins Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1008126/jogo-dynasty-warriors-origins-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 512.99,
+          "original_price": 539.99,
+          "discount_pct": 5.0
+        }
+      ],
+      "lowest_price_ever": 512.99
+    },
+    "Kabum::jogo-ea-sports-fc-26-nintendo-switch-2": {
+      "title": "Jogo Ea Sports Fc 26 Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007848/jogo-ea-sports-fc-26-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 695.59,
+          "original_price": 739.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 695.59
+    },
+    "Kabum::jogo-star-wars-outlaws-nintendo-switch-2": {
+      "title": "Jogo Star Wars Outlaws Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007849/jogo-star-wars-outlaws-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 686.19,
+          "original_price": 729.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 686.19
+    },
+    "Kabum::jogo-disgaea-7-complete-deluxe-edition-nintendo-switch-2": {
+      "title": "Jogo Disgaea 7 Complete Deluxe Edition Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1008129/jogo-disgaea-7-complete-deluxe-edition-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 797.99,
+          "original_price": 839.99,
+          "discount_pct": 5.0
+        }
+      ],
+      "lowest_price_ever": 797.99
+    },
+    "Kabum::jogo-hades-2-nintendo-switch-2": {
+      "title": "Jogo Hades 2 Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007856/jogo-hades-2-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 601.59,
+          "original_price": 639.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 601.59
+    },
+    "Kabum::jogo-kirby-and-the-forgotten-land-star-crossed-world-nintendo-switch-2": {
+      "title": "Jogo Kirby And The Forgotten Land + Star-crossed World Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007875/jogo-kirby-and-the-forgotten-land-star-crossed-world-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 671.04,
+          "original_price": 699.0,
+          "discount_pct": 4.0
+        },
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 700.79,
+          "original_price": 729.99,
+          "discount_pct": 4.0
+        }
+      ],
+      "lowest_price_ever": 671.04
+    },
+    "Kabum::jogo-importado-dragon-quest-1-e-2-interruptor-hd-2d-remake-nintendo-switch-2": {
+      "title": "Jogo Importado Dragon Quest 1 E 2 Interruptor Hd-2d Remake Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1021068/jogo-importado-dragon-quest-1-e-2-interruptor-hd-2d-remake-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 846.71,
+          "original_price": 881.99,
+          "discount_pct": 4.0
+        }
+      ],
+      "lowest_price_ever": 846.71
+    },
+    "Kabum::jogo-fortnite-darkfire-e-ice-bundle-nintendo-switch-2": {
+      "title": "Jogo Fortnite Darkfire E Ice Bundle Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1021069/jogo-fortnite-darkfire-e-ice-bundle-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 796.79,
+          "original_price": 829.99,
+          "discount_pct": 4.0
+        }
+      ],
+      "lowest_price_ever": 796.79
+    },
+    "Kabum::jogo-mortal-kombat-legacy-kollection-deluxe-edition-nintendo-switch-2": {
+      "title": "Jogo Mortal Kombat Legacy Kollection Deluxe Edition Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1007861/jogo-mortal-kombat-legacy-kollection-deluxe-edition-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 601.59,
+          "original_price": 639.99,
+          "discount_pct": 6.0
+        }
+      ],
+      "lowest_price_ever": 601.59
+    },
+    "Kabum::jogo-pragmata-importado-nintendo-switch-2": {
+      "title": "Jogo Pragmata Importado Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1046545/jogo-pragmata-importado-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 814.79,
+          "original_price": 839.99,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 814.79
+    },
+    "Kabum::jogo-the-disney-afternoon-collection-importado-nintendo-switch-2": {
+      "title": "Jogo The Disney Afternoon Collection Importado Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1046541/jogo-the-disney-afternoon-collection-importado-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 521.85,
+          "original_price": 537.99,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 521.85
+    },
+    "Kabum::jogo-resident-evil-requiem-nintendo-switch-2": {
+      "title": "Jogo Resident Evil Requiem Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1046914/jogo-resident-evil-requiem-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 805.09,
+          "original_price": 829.99,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 805.09
+    },
+    "Kabum::jogo-pikmin-1-e-2-nintendo-switch": {
+      "title": "Jogo Pikmin 1 E 2 Nintendo Switch",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1047234/jogo-pikmin-1-e-2-nintendo-switch",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 630.6,
+          "original_price": 650.1,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 630.6
+    },
+    "Kabum::jogo-marvel-cosmic-invasion-nintendo-switch-2": {
+      "title": "Jogo Marvel Cosmic Invasion Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1047229/jogo-marvel-cosmic-invasion-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 497.51,
+          "original_price": 512.9,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 497.51
+    },
+    "Kabum::jogo-star-fox-nintendo-switch-2": {
+      "title": "Jogo Star Fox Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1060641/jogo-star-fox-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 759.49,
+          "original_price": 774.99,
+          "discount_pct": 2.0
+        }
+      ],
+      "lowest_price_ever": 759.49
+    },
+    "Kabum::jogo-splatoon-raiders-nintendo-switch-2": {
+      "title": "Jogo Splatoon Raiders Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1060639/jogo-splatoon-raiders-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 685.99,
+          "original_price": 699.99,
+          "discount_pct": 2.0
+        }
+      ],
+      "lowest_price_ever": 685.99
+    },
+    "Kabum::jogo-tomba-2-the-evil-swine-return-special-edition-nintendo-switch": {
+      "title": "Jogo Tomba 2 The Evil Swine Return Special Edition Nintendo Switch",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1064211/jogo-tomba-2-the-evil-swine-return-special-edition-nintendo-switch",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 775.99,
+          "original_price": 799.99,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 775.99
+    },
+    "Kabum::jogo-my-hero-academia-alls-justice-nintendo-switch-2-importado": {
+      "title": "Jogo My Hero Academia Alls Justice Nintendo Switch 2 Importado",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1066311/jogo-my-hero-academia-alls-justice-nintendo-switch-2-importado",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 805.09,
+          "original_price": 829.99,
+          "discount_pct": 3.0
+        }
+      ],
+      "lowest_price_ever": 805.09
+    },
+    "Kabum::jogo-onimusha-way-of-the-sword-nintendo-switch-2": {
+      "title": "Jogo Onimusha Way Of The Sword Nintendo Switch 2",
+      "store": "Kabum",
+      "url": "https://www.kabum.com.br/produto/1075745/jogo-onimusha-way-of-the-sword-nintendo-switch-2",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-12T10:35:32.712650+00:00",
+          "price": 740.49,
+          "original_price": null,
+          "discount_pct": null
+        }
+      ],
+      "lowest_price_ever": 740.49
+    }
+  },
+  "last_updated": "2026-11-12T10:35:32.712650+00:00"
 }
