@@ -4,7 +4,12 @@ on:
   schedule:
     # Todo dia às 09:00 (horário de Brasília = UTC-3) -> 12:00 UTC
     - cron: "0 12 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Salvar HTML bruto como artefato para depuração dos seletores"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,6 +31,16 @@ jobs:
 
       - name: Rodar scraper
         run: python scraper.py
+        env:
+          SCRAPER_DEBUG: ${{ inputs.debug && '1' || '0' }}
+
+      - name: Subir HTML de depuração (se debug=true)
+        if: ${{ inputs.debug }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-html
+          path: debug_html/
+          retention-days: 3
 
       - name: Commitar alterações
         run: |

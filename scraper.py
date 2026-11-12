@@ -76,10 +76,17 @@ def _discount(price: float, original: Optional[float]) -> Optional[float]:
     return round((1 - price / original) * 100, 1)
 
 
-def _get(url: str) -> Optional[BeautifulSoup]:
+DEBUG_HTML_DIR = Path(__file__).parent / "debug_html"
+DEBUG_MODE = __import__("os").environ.get("SCRAPER_DEBUG") == "1"
+
+
+def _get(url: str, debug_name: Optional[str] = None) -> Optional[BeautifulSoup]:
     try:
         resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
         resp.raise_for_status()
+        if DEBUG_MODE and debug_name:
+            DEBUG_HTML_DIR.mkdir(parents=True, exist_ok=True)
+            (DEBUG_HTML_DIR / f"{debug_name}.html").write_text(resp.text, encoding="utf-8")
         return BeautifulSoup(resp.text, "html.parser")
     except requests.RequestException as e:
         print(f"[WARN] Falha ao buscar {url}: {e}", file=sys.stderr)
@@ -97,7 +104,7 @@ def scrape_mercadolivre() -> list[Listing]:
     for page in range(MAX_PAGES_PER_STORE):
         offset = page * 50 + 1
         url = base if page == 0 else f"{base}_Desde_{offset}"
-        soup = _get(url)
+        soup = _get(url, debug_name=f"mercadolivre_page{page}")
         if not soup:
             break
 
@@ -152,7 +159,7 @@ def scrape_kabum() -> list[Listing]:
     listings: list[Listing] = []
     url = "https://www.kabum.com.br/busca/nintendo-switch-2-jogo"
 
-    soup = _get(url)
+    soup = _get(url, debug_name="kabum")
     if not soup:
         return listings
 
@@ -202,7 +209,7 @@ def scrape_magalu() -> list[Listing]:
     listings: list[Listing] = []
     url = "https://www.magazineluiza.com.br/busca/nintendo+switch+2+jogo/"
 
-    soup = _get(url)
+    soup = _get(url, debug_name="magalu")
     if not soup:
         return listings
 
@@ -260,7 +267,7 @@ def scrape_amazon() -> list[Listing]:
     listings: list[Listing] = []
     url = "https://www.amazon.com.br/s?k=nintendo+switch+2+jogo"
 
-    soup = _get(url)
+    soup = _get(url, debug_name="amazon")
     if not soup:
         return listings
 
