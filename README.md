@@ -48,3 +48,34 @@ python -m http.server 8000
 No repositório: **Settings → Pages → Source: Deploy from a branch →
 Branch: `main` / pasta `/ (root)`**. Depois de alguns minutos o site
 fica disponível em `https://<seu-usuario>.github.io/<repo>/`.
+
+## Rodando no seu computador pra destravar Mercado Livre e Magalu
+
+O GitHub Actions roda na nuvem, de um IP de datacenter. Mercado Livre e
+Magalu detectam que a conexão não é de um navegador real (ex: a Mercado
+Livre devolve um header `x-is-search-bot: true` pra requisições simples)
+e bloqueiam, mesmo vindo de IP residencial. Um **navegador real
+(Chromium via Playwright)** rodando do **seu próprio computador** tem
+chance real de passar por esse bloqueio.
+
+### Primeira vez (configuração)
+
+Dê duplo clique em `atualizar_precos.command` (ou rode `bash
+atualizar_precos.command` no Terminal). Na primeira vez ele vai:
+1. Instalar as dependências Python
+2. Baixar o Chromium do Playwright (pode levar alguns minutos)
+3. Rodar o scraper
+4. Enviar o resultado pro GitHub automaticamente
+
+### Próximas vezes
+
+É só dar duplo clique de novo quando quiser atualizar os preços
+manualmente. Leva uns 30-60 segundos.
+
+### Se o `git push` pedir login
+
+Seu Mac precisa estar autenticado no GitHub (normal se você já usa git
+por aí). Se pedir usuário/senha e a senha não funcionar, o GitHub exige
+um *token* de acesso pessoal em vez de senha normal - crie um em
+https://github.com/settings/tokens e use ele no lugar da senha, ou
+configure o GitHub CLI (`gh auth login`) antes de rodar o script.
