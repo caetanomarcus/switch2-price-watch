@@ -1,22 +1,22 @@
 # Switch 2 Price Watch
 
 Site que monitora automaticamente preços de jogos de **Nintendo Switch 2**
-em lojas brasileiras (Mercado Livre, Kabum, Magalu e Amazon BR) e no
-agregador de ofertas **Promobit**, detecta promoções e mostra o
-histórico de menor preço.
+na Kabum, Amazon BR e no agregador de ofertas **Promobit**, detecta
+promoções e mostra o histórico de menor preço.
 
 🔗 Site publicado via GitHub Pages: (ativar em Settings → Pages → branch `main` → pasta `/`)
 
 ## Como funciona
 
 1. `scraper.py` varre as páginas de busca/categoria de jogos de Switch 2
-   em cada loja, pega título, preço atual e preço "de tabela", e calcula
+   em cada fonte, pega título, preço atual e preço "de tabela", e calcula
    o desconto.
 2. O histórico de cada jogo é salvo em `data/prices.json` (um arquivo só,
    versionado no próprio repositório — sem banco de dados).
 3. Um workflow do **GitHub Actions** (`.github/workflows/update-prices.yml`)
    roda o scraper todo dia às 09h (horário de Brasília) e comita o
-   `prices.json` atualizado automaticamente.
+   `prices.json` atualizado automaticamente — 100% na nuvem, sem precisar
+   de nenhum computador ligado.
 4. `index.html` é uma página estática que lê esse JSON e mostra os
    jogos, ordenados por maior desconto por padrão.
 
@@ -29,59 +29,34 @@ python scraper.py
 python -m http.server 8000
 ```
 
-## Avisos importantes
+## Fontes e limitações
 
-- **Isso é scraping de HTML público, não uso de API oficial.** As lojas
-  podem mudar o layout da página a qualquer momento — quando isso
-  acontece, a loja afetada simplesmente para de aparecer nos resultados
-  até alguém atualizar os seletores em `scraper.py`. As outras lojas
-  continuam funcionando normalmente (os erros são isolados por loja).
-- **Amazon BR é a mais instável**, pois bloqueia scraping agressivamente
-  (CAPTCHA/anti-bot) e seus Termos de Uso proíbem coleta automatizada.
-  A função correspondente falha de forma silenciosa (lista vazia) quando
-  bloqueada, em vez de insistir. O caminho mais robusto e dentro das
-  regras seria usar a Amazon PA-API via Programa de Associados.
+- **Kabum**: funciona de forma estável, lendo os dados embutidos na
+  própria página (`__NEXT_DATA__`).
+- **Amazon BR**: bloqueia scraping agressivamente (CAPTCHA/anti-bot) e
+  seus Termos de Uso proíbem coleta automatizada. A função falha de
+  forma silenciosa (lista vazia) quando bloqueada, em vez de insistir.
+  O caminho mais robusto e dentro das regras seria a Amazon PA-API via
+  Programa de Associados.
+- **Promobit** é um agregador (não vende direto) — lista ofertas postadas
+  pela comunidade, com a loja de origem entre parênteses, ex: "Promobit
+  (Amazon)". O scraper pagina pelos destaques recentes da categoria
+  "Nintendo Switch" usando o cursor interno do site (até
+  `PROMOBIT_MAX_PAGES` páginas, hoje 8).
+- **Mercado Livre e Magazine Luiza foram removidos** do scraper: ambos
+  detectam automação mesmo com navegador real (Playwright) e IP
+  residencial — não é bloqueio de IP, é fingerprint de bot. **Pelando**
+  foi avaliado e descartado pelo mesmo motivo (desafio Cloudflare bloqueia
+  até requisição simples).
+- **Isso é scraping de HTML público, não uso de API oficial.** Qualquer
+  fonte pode mudar o layout da página a qualquer momento — quando isso
+  acontece, ela simplesmente para de aparecer nos resultados até alguém
+  atualizar o parser em `scraper.py`. Os erros são isolados por fonte.
 - Rode o scraper manualmente a qualquer momento via aba **Actions** do
   GitHub → "Atualizar preços Switch 2" → "Run workflow".
-- **Promobit** é um agregador (não vende direto) — lista ofertas postadas
-  pela comunidade com a loja de origem entre parênteses, ex: "Promobit
-  (Amazon)". A página de categoria usada só retorna os ~10 destaques mais
-  recentes de "Nintendo Switch" (não achamos paginação sem JS), então é
-  uma fonte complementar, não uma varredura completa do catálogo.
 
 ## Ativando o site (GitHub Pages)
 
 No repositório: **Settings → Pages → Source: Deploy from a branch →
 Branch: `main` / pasta `/ (root)`**. Depois de alguns minutos o site
 fica disponível em `https://<seu-usuario>.github.io/<repo>/`.
-
-## Rodando no seu computador pra destravar Mercado Livre e Magalu
-
-O GitHub Actions roda na nuvem, de um IP de datacenter. Mercado Livre e
-Magalu detectam que a conexão não é de um navegador real (ex: a Mercado
-Livre devolve um header `x-is-search-bot: true` pra requisições simples)
-e bloqueiam, mesmo vindo de IP residencial. Um **navegador real
-(Chromium via Playwright)** rodando do **seu próprio computador** tem
-chance real de passar por esse bloqueio.
-
-### Primeira vez (configuração)
-
-Dê duplo clique em `atualizar_precos.command` (ou rode `bash
-atualizar_precos.command` no Terminal). Na primeira vez ele vai:
-1. Instalar as dependências Python
-2. Baixar o Chromium do Playwright (pode levar alguns minutos)
-3. Rodar o scraper
-4. Enviar o resultado pro GitHub automaticamente
-
-### Próximas vezes
-
-É só dar duplo clique de novo quando quiser atualizar os preços
-manualmente. Leva uns 30-60 segundos.
-
-### Se o `git push` pedir login
-
-Seu Mac precisa estar autenticado no GitHub (normal se você já usa git
-por aí). Se pedir usuário/senha e a senha não funcionar, o GitHub exige
-um *token* de acesso pessoal em vez de senha normal - crie um em
-https://github.com/settings/tokens e use ele no lugar da senha, ou
-configure o GitHub CLI (`gh auth login`) antes de rodar o script.

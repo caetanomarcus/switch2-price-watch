@@ -4,10 +4,9 @@ cd "$(dirname "$0")"
 
 # Usa o Python do sistema (/usr/bin/python3) em vez do "python3" do PATH,
 # porque se você tiver o Anaconda/Miniconda ativado (prompt mostrando
-# "(base)"), o "python3" do PATH aponta pra versão do Conda - que pode
-# ser tão nova que pacotes como o "greenlet" (dependência do Playwright)
-# ainda não têm instalador pré-compilado pra ela, e a instalação falha
-# tentando compilar do zero. O Python do sistema é mais estável pra isso.
+# "(base)"), o "python3" do PATH aponta pra versão do Conda, que pode
+# ter incompatibilidades com pacotes mais sensíveis. O Python do sistema
+# é mais estável pra isso.
 PY=/usr/bin/python3
 if [ ! -x "$PY" ]; then
   PY=python3
@@ -23,16 +22,13 @@ if ! "$PY" -m pip --version >/dev/null 2>&1; then
   "$PY" -m ensurepip --upgrade >/dev/null 2>&1 || true
 fi
 
-echo "1/4 - Instalando dependências Python (rápido se já instalado)..."
+echo "1/3 - Instalando dependências Python (rápido se já instalado)..."
 "$PY" -m pip install --quiet --user -r requirements.txt
 
-echo "2/4 - Instalando navegador do Playwright (só demora na primeira vez)..."
-"$PY" -m playwright install chromium
-
-echo "3/4 - Rodando o scraper (Mercado Livre, Kabum, Magalu, Amazon)..."
+echo "2/3 - Rodando o scraper (Kabum, Amazon, Promobit)..."
 SCRAPER_DEBUG=1 "$PY" scraper.py
 
-echo "4/4 - Enviando atualização pro GitHub..."
+echo "3/3 - Enviando atualização pro GitHub..."
 git add data/prices.json
 if git diff --cached --quiet; then
   echo "Nenhuma mudança nos preços desde a última vez."

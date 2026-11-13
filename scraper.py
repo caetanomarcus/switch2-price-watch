@@ -39,14 +39,8 @@ HEADERS = {
     "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
 }
 
-# A API pública do Mercado Livre bloqueia alguns ranges de IP de datacenter
-# (incluindo os dos runners do GitHub Actions) com 403 genérico, independente
-# de User-Agent. Usamos um header de Accept específico de API como última
-# tentativa; se continuar bloqueando, é bloqueio por IP mesmo, não por header.
-ML_API_HEADERS = {**HEADERS, "Accept": "application/json"}
-
 REQUEST_TIMEOUT = 20
-MAX_PAGES_PER_STORE = 3  # limita o número de páginas de busca por loja
+PROMOBIT_MAX_PAGES = 8  # quantas páginas de ofertas paginar no Promobit por execução
 
 
 @dataclass
@@ -129,119 +123,6 @@ def _get_json(
         return None
 
 
-def _get_rendered(
-    url: str, debug_name: Optional[str] = None, wait_ms: int = 4000
-) -> Optional[BeautifulSoup]:
-    """Abre a URL num navegador real (Chromium headless via Playwright) e
-    devolve o HTML já renderizado. Usado pras lojas cujo bloqueio parece
-    ser por fingerprint de bot (não por IP), onde um navegador de verdade
-    tem chance de passar onde um requests.get() simples não passa."""
-    try:
-        from playwright.sync_api import sync_playwright
-    except ImportError:
-        print("[WARN] Playwright não instalado - pulando fetch via navegador", file=sys.stderr)
-        return None
-
-    try:
-        with sync_playwright() as pw:
-            browser = pw.chromium.launch(
-                headless=True,
-                args=["--disable-blink-features=AutomationControlled"],
-            )
-            context = browser.new_context(
-                user_agent=HEADERS["User-Agent"],
-                viewport={"width": 1366, "height": 768},
-                locale="pt-BR",
-                timezone_id="America/Sao_Paulo",
-            )
-            context.add_init_script(
-                "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
-            )
-            page = context.new_page()
-            try:
-                page.goto(url, wait_until="domcontentloaded", timeout=30000)
-                page.wait_for_timeout(wait_ms)
-                html = page.content()
-            finally:
-                browser.close()
-            if debug_name:
-                _save_debug(debug_name, html)
-            return BeautifulSoup(html, "html.parser")
-    except Exception as e:
-        print(f"[WARN] Playwright falhou em {url}: {e}", file=sys.stderr)
-        return None
-
-
-# ---------------------------------------------------------------------------
-# Mercado Livre
-# ---------------------------------------------------------------------------
-# Tentativa 1 (API pública) e a página HTML simples via requests.get() foram
-# bloqueadas (403 / página de "tráfego suspeito"), aparentemente por IP do
-# datacenter do runner, não só por fingerprint. Como último recurso, abrimos
-# a página de busca normal num navegador real headless (Playwright). Se isso
-# também for bloqueado, é sinal de que o bloqueio é por IP mesmo, e não há
-# muito o que fazer sem mudar de rede (proxy residencial etc.), o que está
-# fora do escopo deste projeto.
-def scrape_mercadolivre() -> list[Listing]:
-    store = "Mercado Livre"
-    listings: list[Listing] = []
-    url = "https://lista.mercadolivre.com.br/jogo-nintendo-switch-2"
-
-    soup = _get_rendered(url, debug_name="mercadolivre_browser")
-    if not soup:
-        return listings
-
-    # Mercado Livre usa variações de classe entre o layout "clássico" e o
-    # novo "poly-card"; tentamos os dois.
-    items = soup.select("li.ui-search-layout__item") or soup.select("div.poly-card")
-    if not items:
-        title_tag = soup.find("title")
-        print(
-            f"[WARN] Mercado Livre: 0 cards encontrados no HTML renderizado "
-            f"(título da página: {title_tag.get_text(strip=True) if title_tag else '??'}). "
-            f"Rode com SCRAPER_DEBUG=1 e confira debug_html/mercadolivre_browser.html",
-            file=sys.stderr,
-        )
-    for item in items:
-        title_el = (
-            item.select_one("h2.ui-search-item__title")
-            or item.select_one("h3.poly-component__title")
-            or item.select_one("a.poly-component__title")
-        )
-        link_el = item.select_one("a.ui-search-link") or item.select_one("a.poly-component__title")
-        price_el = item.select_one("span.andes-money-amount__fraction")
-        original_el = item.select_one(
-            "s.andes-money-amount--previous span.andes-money-amount__fraction"
-        )
-
-        if not title_el or not price_el:
-            continue
-
-        title = title_el.get_text(strip=True)
-        if "switch" not in title.lower():
-            continue
-
-        href = link_el.get("href", "") if link_el else ""
-        price = _to_float_brl(price_el.get_text(strip=True))
-        original = _to_float_brl(original_el.get_text(strip=True)) if original_el else None
-
-        if price is None:
-            continue
-
-        listings.append(
-            Listing(
-                store=store,
-                title=title,
-                url=href,
-                price=price,
-                original_price=original,
-                discount_pct=_discount(price, original),
-            )
-        )
-
-    return listings
-
-
 # ---------------------------------------------------------------------------
 # Kabum
 # ---------------------------------------------------------------------------
@@ -299,67 +180,6 @@ def scrape_kabum() -> list[Listing]:
                 price=float(price_final),
                 original_price=float(original) if original else None,
                 discount_pct=_discount(float(price_final), float(original) if original else None),
-            )
-        )
-
-    return listings
-
-
-# ---------------------------------------------------------------------------
-# Magazine Luiza
-# ---------------------------------------------------------------------------
-# A Magalu bloqueia requests simples com um desafio Akamai Bot Manager
-# (página "Não é possível acessar a página", erro 403). Tentamos via
-# navegador real headless antes de desistir.
-def scrape_magalu() -> list[Listing]:
-    store = "Magalu"
-    listings: list[Listing] = []
-    url = "https://www.magazineluiza.com.br/busca/nintendo+switch+2+jogo/"
-
-    soup = _get_rendered(url, debug_name="magalu_browser")
-    if not soup:
-        return listings
-
-    cards = soup.select("[data-testid='product-card']")
-    if not cards:
-        title_tag = soup.find("title")
-        print(
-            f"[WARN] Magalu: 0 cards encontrados no HTML renderizado "
-            f"(título da página: {title_tag.get_text(strip=True) if title_tag else '??'}). "
-            f"Rode com SCRAPER_DEBUG=1 e confira debug_html/magalu_browser.html",
-            file=sys.stderr,
-        )
-    for card in cards:
-        title_el = card.select_one("[data-testid='product-title']")
-        link_el = card.select_one("a")
-        price_el = card.select_one("[data-testid='price-value']")
-        original_el = card.select_one("[data-testid='price-original']")
-
-        if not title_el or not price_el:
-            continue
-
-        title = title_el.get_text(strip=True)
-        if "switch" not in title.lower():
-            continue
-
-        href = link_el.get("href", "") if link_el else ""
-        if href and href.startswith("/"):
-            href = "https://www.magazineluiza.com.br" + href
-
-        price = _to_float_brl(price_el.get_text(strip=True))
-        original = _to_float_brl(original_el.get_text(strip=True)) if original_el else None
-
-        if price is None:
-            continue
-
-        listings.append(
-            Listing(
-                store=store,
-                title=title,
-                url=href,
-                price=price,
-                original_price=original,
-                discount_pct=_discount(price, original),
             )
         )
 
@@ -434,75 +254,58 @@ def scrape_amazon() -> list[Listing]:
 # ---------------------------------------------------------------------------
 # O Promobit não é uma loja - é um site que agrega ofertas de várias lojas,
 # postadas pela própria comunidade. A página da categoria "Nintendo Switch"
-# embute um bloco <script id="jsonld-category-offers"> com JSON-LD
-# (schema.org/ItemList de Offer) já com preço, preço "de tabela" e a loja
-# vendedora - não precisa de navegador, uma requisição simples já basta e
-# (até onde testamos) não é bloqueada por IP de datacenter. A lista vem
-# fixa em ~10 itens por página (não achamos paginação funcional via HTML
-# puro), então é uma fonte complementar, não uma varredura completa.
-def scrape_promobit() -> list[Listing]:
-    store = "Promobit"
+# é renderizada em Next.js e embute os dados já carregados num
+# <script id="__NEXT_DATA__">, em props.pageProps.serverOffers. Esse bloco
+# tem um cursor de paginação ("after") que o próprio front-end usa pra
+# buscar a "próxima página" via uma rota de dados do Next
+# (/_next/data/<buildId>/.../s.json?after=<cursor>) - é a mesma rota que o
+# JS do site chama no scroll infinito, só que a gente chama direto. Isso
+# não precisa de navegador e (até onde testamos) não é bloqueado por IP de
+# datacenter. O buildId muda a cada deploy do site, então sempre pegamos
+# ele de novo a partir da primeira página em vez de fixar um valor.
+def _promobit_extract_offers(
+    offers: list[dict], store_fallback: str, seen: set
+) -> list[Listing]:
     listings: list[Listing] = []
-    url = "https://www.promobit.com.br/promocoes/nintendo-switch/s/"
-
-    resp = _get_raw(url, debug_name="promobit")
-    if not resp:
-        return listings
-
-    match = re.search(
-        r'<script id="jsonld-category-offers"[^>]*>(.*?)</script>', resp.text, re.DOTALL
-    )
-    if not match:
-        print("[WARN] Promobit: bloco jsonld-category-offers não encontrado na página", file=sys.stderr)
-        return listings
-
-    try:
-        data = json.loads(match.group(1))
-        items = data["itemListElement"]
-    except (json.JSONDecodeError, KeyError, TypeError) as e:
-        print(f"[WARN] Promobit: estrutura do JSON-LD mudou ({e})", file=sys.stderr)
-        return listings
-
-    for list_item in items:
-        product = list_item.get("item", {})
-        title = product.get("name", "")
+    for o in offers:
+        title = o.get("offerTitle", "")
         title_lower = title.lower()
         if "switch 2" not in title_lower:
             continue
         # Foco em jogos, não no console/bundle em si, e ignora ofertas de
-        # "cupom" cujo "preço" listado é simbólico (ex: R$0,01) e não reflete
-        # o preço real de compra.
+        # "cupom" cujo "preço" listado é simbólico (ex: R$0,01) e não
+        # reflete o preço real de compra.
         if "console" in title_lower or "bundle" in title_lower:
             continue
 
-        offers = product.get("offers") or []
-        if not offers:
-            continue
-        offer = offers[0]
-
-        price = offer.get("price")
-        high = offer.get("highPrice")
+        price = o.get("offerPrice")
+        old_price = o.get("offerOldPrice")
         try:
             price = float(price)
         except (TypeError, ValueError):
             continue
         if price < 5:
-            # Preço simbólico de "ative o cupom pra ver o valor real" - não
-            # é um preço de compra de verdade.
             continue
         try:
-            original = float(high) if high else None
+            original = float(old_price) if old_price else None
         except (TypeError, ValueError):
             original = None
         if original is not None and original <= price:
             original = None
 
-        seller = (offer.get("seller") or {}).get("name", "")
-        href = offer.get("url", "")
+        seller = o.get("storeName", "")
+        slug = o.get("offerSlug", "")
+        offer_id = o.get("offerId", "")
+        href = f"https://www.promobit.com.br/oferta/{slug}-{offer_id}/" if slug and offer_id else ""
+
+        dedupe_key = (seller, title)
+        if dedupe_key in seen:
+            continue
+        seen.add(dedupe_key)
 
         listings.append(
             Listing(
-                store=f"Promobit ({seller})" if seller else store,
+                store=f"Promobit ({seller})" if seller else store_fallback,
                 title=title,
                 url=href,
                 price=price,
@@ -510,14 +313,64 @@ def scrape_promobit() -> list[Listing]:
                 discount_pct=_discount(price, original),
             )
         )
+    return listings
+
+
+def scrape_promobit() -> list[Listing]:
+    store = "Promobit"
+    listings: list[Listing] = []
+    base_url = "https://www.promobit.com.br/promocoes/nintendo-switch/s/"
+
+    resp = _get_raw(base_url, debug_name="promobit_page1")
+    if not resp:
+        return listings
+
+    match = re.search(
+        r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', resp.text, re.DOTALL
+    )
+    if not match:
+        print("[WARN] Promobit: __NEXT_DATA__ não encontrado na página", file=sys.stderr)
+        return listings
+
+    try:
+        next_data = json.loads(match.group(1))
+        build_id = next_data["buildId"]
+        server_offers = next_data["props"]["pageProps"]["serverOffers"]
+    except (json.JSONDecodeError, KeyError, TypeError) as e:
+        print(f"[WARN] Promobit: estrutura do __NEXT_DATA__ mudou ({e})", file=sys.stderr)
+        return listings
+
+    seen: set = set()
+    listings.extend(_promobit_extract_offers(server_offers.get("offers", []), store, seen))
+    cursor = server_offers.get("after")
+
+    for page_num in range(2, PROMOBIT_MAX_PAGES + 1):
+        if not cursor:
+            break
+        time.sleep(1)  # educado com a API deles
+        page_url = (
+            f"https://www.promobit.com.br/_next/data/{build_id}/promocoes/"
+            f"nintendo-switch/s.json?categorySlug=nintendo-switch&after={cursor}"
+        )
+        data = _get_json(page_url, debug_name=f"promobit_page{page_num}")
+        if not data:
+            print(f"[WARN] Promobit: falhou ao buscar página {page_num}, parando paginação", file=sys.stderr)
+            break
+        so = data.get("pageProps", {}).get("serverOffers", {})
+        offers = so.get("offers", [])
+        if not offers:
+            break
+        listings.extend(_promobit_extract_offers(offers, store, seen))
+        next_cursor = so.get("after")
+        if not next_cursor or next_cursor == cursor:
+            break
+        cursor = next_cursor
 
     return listings
 
 
 SCRAPERS = {
-    "Mercado Livre": scrape_mercadolivre,
     "Kabum": scrape_kabum,
-    "Magalu": scrape_magalu,
     "Amazon BR": scrape_amazon,
     "Promobit": scrape_promobit,
 }
