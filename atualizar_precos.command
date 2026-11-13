@@ -30,7 +30,7 @@ echo "2/4 - Instalando navegador do Playwright (só demora na primeira vez)..."
 "$PY" -m playwright install chromium
 
 echo "3/4 - Rodando o scraper (Mercado Livre, Kabum, Magalu, Amazon)..."
-"$PY" scraper.py
+SCRAPER_DEBUG=1 "$PY" scraper.py
 
 echo "4/4 - Enviando atualização pro GitHub..."
 git add data/prices.json
