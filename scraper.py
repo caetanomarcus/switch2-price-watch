@@ -194,6 +194,14 @@ def scrape_mercadolivre() -> list[Listing]:
     # Mercado Livre usa variações de classe entre o layout "clássico" e o
     # novo "poly-card"; tentamos os dois.
     items = soup.select("li.ui-search-layout__item") or soup.select("div.poly-card")
+    if not items:
+        title_tag = soup.find("title")
+        print(
+            f"[WARN] Mercado Livre: 0 cards encontrados no HTML renderizado "
+            f"(título da página: {title_tag.get_text(strip=True) if title_tag else '??'}). "
+            f"Rode com SCRAPER_DEBUG=1 e confira debug_html/mercadolivre_browser.html",
+            file=sys.stderr,
+        )
     for item in items:
         title_el = (
             item.select_one("h2.ui-search-item__title")
@@ -313,6 +321,14 @@ def scrape_magalu() -> list[Listing]:
         return listings
 
     cards = soup.select("[data-testid='product-card']")
+    if not cards:
+        title_tag = soup.find("title")
+        print(
+            f"[WARN] Magalu: 0 cards encontrados no HTML renderizado "
+            f"(título da página: {title_tag.get_text(strip=True) if title_tag else '??'}). "
+            f"Rode com SCRAPER_DEBUG=1 e confira debug_html/magalu_browser.html",
+            file=sys.stderr,
+        )
     for card in cards:
         title_el = card.select_one("[data-testid='product-title']")
         link_el = card.select_one("a")
