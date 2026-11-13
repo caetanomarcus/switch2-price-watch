@@ -1,8 +1,9 @@
 # Switch 2 Price Watch
 
 Site que monitora automaticamente preços de jogos de **Nintendo Switch 2**
-em lojas brasileiras (Mercado Livre, Kabum, Magalu e Amazon BR), detecta
-promoções e mostra o histórico de menor preço.
+em lojas brasileiras (Mercado Livre, Kabum, Magalu e Amazon BR) e no
+agregador de ofertas **Promobit**, detecta promoções e mostra o
+histórico de menor preço.
 
 🔗 Site publicado via GitHub Pages: (ativar em Settings → Pages → branch `main` → pasta `/`)
 
@@ -42,6 +43,11 @@ python -m http.server 8000
   regras seria usar a Amazon PA-API via Programa de Associados.
 - Rode o scraper manualmente a qualquer momento via aba **Actions** do
   GitHub → "Atualizar preços Switch 2" → "Run workflow".
+- **Promobit** é um agregador (não vende direto) — lista ofertas postadas
+  pela comunidade com a loja de origem entre parênteses, ex: "Promobit
+  (Amazon)". A página de categoria usada só retorna os ~10 destaques mais
+  recentes de "Nintendo Switch" (não achamos paginação sem JS), então é
+  uma fonte complementar, não uma varredura completa do catálogo.
 
 ## Ativando o site (GitHub Pages)
 

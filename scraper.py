@@ -428,11 +428,98 @@ def scrape_amazon() -> list[Listing]:
     return listings
 
 
+
+# ---------------------------------------------------------------------------
+# Promobit (agregador de ofertas)
+# ---------------------------------------------------------------------------
+# O Promobit não é uma loja - é um site que agrega ofertas de várias lojas,
+# postadas pela própria comunidade. A página da categoria "Nintendo Switch"
+# embute um bloco <script id="jsonld-category-offers"> com JSON-LD
+# (schema.org/ItemList de Offer) já com preço, preço "de tabela" e a loja
+# vendedora - não precisa de navegador, uma requisição simples já basta e
+# (até onde testamos) não é bloqueada por IP de datacenter. A lista vem
+# fixa em ~10 itens por página (não achamos paginação funcional via HTML
+# puro), então é uma fonte complementar, não uma varredura completa.
+def scrape_promobit() -> list[Listing]:
+    store = "Promobit"
+    listings: list[Listing] = []
+    url = "https://www.promobit.com.br/promocoes/nintendo-switch/s/"
+
+    resp = _get_raw(url, debug_name="promobit")
+    if not resp:
+        return listings
+
+    match = re.search(
+        r'<script id="jsonld-category-offers"[^>]*>(.*?)</script>', resp.text, re.DOTALL
+    )
+    if not match:
+        print("[WARN] Promobit: bloco jsonld-category-offers não encontrado na página", file=sys.stderr)
+        return listings
+
+    try:
+        data = json.loads(match.group(1))
+        items = data["itemListElement"]
+    except (json.JSONDecodeError, KeyError, TypeError) as e:
+        print(f"[WARN] Promobit: estrutura do JSON-LD mudou ({e})", file=sys.stderr)
+        return listings
+
+    for list_item in items:
+        product = list_item.get("item", {})
+        title = product.get("name", "")
+        title_lower = title.lower()
+        if "switch 2" not in title_lower:
+            continue
+        # Foco em jogos, não no console/bundle em si, e ignora ofertas de
+        # "cupom" cujo "preço" listado é simbólico (ex: R$0,01) e não reflete
+        # o preço real de compra.
+        if "console" in title_lower or "bundle" in title_lower:
+            continue
+
+        offers = product.get("offers") or []
+        if not offers:
+            continue
+        offer = offers[0]
+
+        price = offer.get("price")
+        high = offer.get("highPrice")
+        try:
+            price = float(price)
+        except (TypeError, ValueError):
+            continue
+        if price < 5:
+            # Preço simbólico de "ative o cupom pra ver o valor real" - não
+            # é um preço de compra de verdade.
+            continue
+        try:
+            original = float(high) if high else None
+        except (TypeError, ValueError):
+            original = None
+        if original is not None and original <= price:
+            original = None
+
+        seller = (offer.get("seller") or {}).get("name", "")
+        href = offer.get("url", "")
+
+        listings.append(
+            Listing(
+                store=f"Promobit ({seller})" if seller else store,
+                title=title,
+                url=href,
+                price=price,
+                original_price=original,
+                discount_pct=_discount(price, original),
+            )
+        )
+
+    return listings
+
+
 SCRAPERS = {
     "Mercado Livre": scrape_mercadolivre,
     "Kabum": scrape_kabum,
     "Magalu": scrape_magalu,
     "Amazon BR": scrape_amazon,
+    "Promobit": scrape_promobit,
 }
 
 
