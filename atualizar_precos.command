@@ -2,16 +2,35 @@
 set -e
 cd "$(dirname "$0")"
 
+# Usa o Python do sistema (/usr/bin/python3) em vez do "python3" do PATH,
+# porque se você tiver o Anaconda/Miniconda ativado (prompt mostrando
+# "(base)"), o "python3" do PATH aponta pra versão do Conda - que pode
+# ser tão nova que pacotes como o "greenlet" (dependência do Playwright)
+# ainda não têm instalador pré-compilado pra ela, e a instalação falha
+# tentando compilar do zero. O Python do sistema é mais estável pra isso.
+PY=/usr/bin/python3
+if [ ! -x "$PY" ]; then
+  PY=python3
+fi
+echo "Usando: $($PY --version) ($PY)"
+
 echo "=== Switch 2 Price Watch - atualização local ==="
 echo ""
+
+# O Python do sistema do macOS não vem com o pip instalado por padrão.
+if ! "$PY" -m pip --version >/dev/null 2>&1; then
+  echo "Instalando o pip (primeira vez)..."
+  "$PY" -m ensurepip --upgrade >/dev/null 2>&1 || true
+fi
+
 echo "1/4 - Instalando dependências Python (rápido se já instalado)..."
-pip3 install --quiet --user -r requirements.txt
+"$PY" -m pip install --quiet --user -r requirements.txt
 
 echo "2/4 - Instalando navegador do Playwright (só demora na primeira vez)..."
-python3 -m playwright install chromium
+"$PY" -m playwright install chromium
 
 echo "3/4 - Rodando o scraper (Mercado Livre, Kabum, Magalu, Amazon)..."
-python3 scraper.py
+"$PY" scraper.py
 
 echo "4/4 - Enviando atualização pro GitHub..."
 git add data/prices.json
