@@ -77,6 +77,12 @@
           "price": 369.9,
           "original_price": 397.74,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 369.9,
+          "original_price": 397.74,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 369.9
@@ -155,6 +161,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 409.12,
+          "original_price": 439.91,
+          "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 409.12,
           "original_price": 439.91,
           "discount_pct": 7.0
@@ -239,6 +251,12 @@
           "price": 452.85,
           "original_price": 486.94,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 452.85,
+          "original_price": 486.94,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 452.85
@@ -317,6 +335,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 368.56,
+          "original_price": 396.3,
+          "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 368.56,
           "original_price": 396.3,
           "discount_pct": 7.0
@@ -401,6 +425,12 @@
           "price": 4417.06,
           "original_price": 4699.0,
           "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 4417.06,
+          "original_price": 4699.0,
+          "discount_pct": 6.0
         }
       ],
       "lowest_price_ever": 4417.06
@@ -482,6 +512,12 @@
           "price": 418.41,
           "original_price": 449.9,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 418.41,
+          "original_price": 449.9,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 418.41
@@ -554,6 +590,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 408.27,
+          "original_price": 453.63,
+          "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 408.27,
           "original_price": 453.63,
           "discount_pct": 10.0
@@ -638,6 +680,12 @@
           "price": 379.78,
           "original_price": 408.37,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 379.78,
+          "original_price": 408.37,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 379.78
@@ -716,6 +764,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 185.07,
+          "original_price": 205.63,
+          "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 185.07,
           "original_price": 205.63,
           "discount_pct": 10.0
@@ -800,6 +854,12 @@
           "price": 426.2,
           "original_price": 458.28,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 426.2,
+          "original_price": 458.28,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 426.2
@@ -878,6 +938,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 278.07,
+          "original_price": 299.0,
+          "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 278.07,
           "original_price": 299.0,
           "discount_pct": 7.0
@@ -962,6 +1028,12 @@
           "price": 415.9,
           "original_price": 447.2,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 415.9,
+          "original_price": 447.2,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 415.9
@@ -1040,6 +1112,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 449.1,
+          "original_price": 499.0,
+          "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 449.1,
           "original_price": 499.0,
           "discount_pct": 10.0
@@ -1124,6 +1202,12 @@
           "price": 288.21,
           "original_price": 320.23,
           "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 288.21,
+          "original_price": 320.23,
+          "discount_pct": 10.0
         }
       ],
       "lowest_price_ever": 288.21
@@ -1202,6 +1286,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 233.1,
+          "original_price": 245.37,
+          "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 233.1,
           "original_price": 245.37,
           "discount_pct": 5.0
@@ -1286,6 +1376,12 @@
           "price": 297.52,
           "original_price": 319.91,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 297.52,
+          "original_price": 319.91,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 297.52
@@ -1364,6 +1460,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 332.1,
+          "original_price": 369.0,
+          "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 332.1,
           "original_price": 369.0,
           "discount_pct": 10.0
@@ -1448,6 +1550,12 @@
           "price": 782.09,
           "original_price": 789.99,
           "discount_pct": 1.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 782.09,
+          "original_price": 789.99,
+          "discount_pct": 1.0
         }
       ],
       "lowest_price_ever": 782.09
@@ -1526,6 +1634,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 449.0,
+          "original_price": 498.89,
+          "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 449.0,
           "original_price": 498.89,
           "discount_pct": 10.0
@@ -1610,6 +1724,12 @@
           "price": 341.91,
           "original_price": 379.9,
           "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 341.91,
+          "original_price": 379.9,
+          "discount_pct": 10.0
         }
       ],
       "lowest_price_ever": 341.91
@@ -1688,6 +1808,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 395.1,
+          "original_price": 424.84,
+          "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 395.1,
           "original_price": 424.84,
           "discount_pct": 7.0
@@ -1772,6 +1898,12 @@
           "price": 989.99,
           "original_price": 999.99,
           "discount_pct": 1.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 989.99,
+          "original_price": 999.99,
+          "discount_pct": 1.0
         }
       ],
       "lowest_price_ever": 989.99
@@ -1850,6 +1982,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 1217.69,
+          "original_price": 1229.99,
+          "discount_pct": 1.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 1217.69,
           "original_price": 1229.99,
           "discount_pct": 1.0
@@ -1934,6 +2072,12 @@
           "price": 968.19,
           "original_price": 1029.99,
           "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 968.19,
+          "original_price": 1029.99,
+          "discount_pct": 6.0
         }
       ],
       "lowest_price_ever": 968.19
@@ -2012,6 +2156,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 371.91,
+          "original_price": 413.23,
+          "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 371.91,
           "original_price": 413.23,
           "discount_pct": 10.0
@@ -2096,6 +2246,12 @@
           "price": 1352.88,
           "original_price": 1380.49,
           "discount_pct": 2.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 1352.88,
+          "original_price": 1380.49,
+          "discount_pct": 2.0
         }
       ],
       "lowest_price_ever": 1352.88
@@ -2174,6 +2330,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 1107.39,
+          "original_price": 1129.99,
+          "discount_pct": 2.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 1107.39,
           "original_price": 1129.99,
           "discount_pct": 2.0
@@ -2258,6 +2420,12 @@
           "price": 1672.18,
           "original_price": 1723.9,
           "discount_pct": 3.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 1672.18,
+          "original_price": 1723.9,
+          "discount_pct": 3.0
         }
       ],
       "lowest_price_ever": 1672.18
@@ -2336,6 +2504,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 999.99,
+          "original_price": null,
+          "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 999.99,
           "original_price": null,
           "discount_pct": null
@@ -2420,6 +2594,12 @@
           "price": 1163.99,
           "original_price": 1199.99,
           "discount_pct": 3.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 1163.99,
+          "original_price": 1199.99,
+          "discount_pct": 3.0
         }
       ],
       "lowest_price_ever": 1163.99
@@ -2501,6 +2681,12 @@
           "price": 2504.69,
           "original_price": 2529.99,
           "discount_pct": 1.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 2504.69,
+          "original_price": 2529.99,
+          "discount_pct": 1.0
         }
       ],
       "lowest_price_ever": 2504.69
@@ -2579,6 +2765,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 299.0,
+          "original_price": null,
+          "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 299.0,
           "original_price": null,
           "discount_pct": null
@@ -2720,6 +2912,12 @@
           "price": 607.99,
           "original_price": 639.99,
           "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 607.99,
+          "original_price": 639.99,
+          "discount_pct": 5.0
         }
       ],
       "lowest_price_ever": 607.99
@@ -2786,6 +2984,12 @@
         },
         {
           "date": "2026-11-13T23:29:10.464242+00:00",
+          "price": 607.99,
+          "original_price": 639.99,
+          "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 607.99,
           "original_price": 639.99,
           "discount_pct": 5.0
@@ -2870,6 +3074,12 @@
           "price": 614.39,
           "original_price": 639.99,
           "discount_pct": 4.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 614.39,
+          "original_price": 639.99,
+          "discount_pct": 4.0
         }
       ],
       "lowest_price_ever": 614.39
@@ -2918,6 +3128,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 507.59,
+          "original_price": 539.99,
+          "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 507.59,
           "original_price": 539.99,
           "discount_pct": 6.0
@@ -3002,6 +3218,12 @@
           "price": 507.59,
           "original_price": 539.99,
           "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 507.59,
+          "original_price": 539.99,
+          "discount_pct": 6.0
         }
       ],
       "lowest_price_ever": 507.59
@@ -3050,6 +3272,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 507.59,
+          "original_price": 539.99,
+          "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 507.59,
           "original_price": 539.99,
           "discount_pct": 6.0
@@ -3134,6 +3362,12 @@
           "price": 601.59,
           "original_price": 639.99,
           "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 601.59,
+          "original_price": 639.99,
+          "discount_pct": 6.0
         }
       ],
       "lowest_price_ever": 601.59
@@ -3212,6 +3446,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 512.99,
+          "original_price": 539.99,
+          "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 512.99,
           "original_price": 539.99,
           "discount_pct": 5.0
@@ -3296,6 +3536,12 @@
           "price": 695.59,
           "original_price": 739.99,
           "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 695.59,
+          "original_price": 739.99,
+          "discount_pct": 6.0
         }
       ],
       "lowest_price_ever": 695.59
@@ -3374,6 +3620,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 686.19,
+          "original_price": 729.99,
+          "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 686.19,
           "original_price": 729.99,
           "discount_pct": 6.0
@@ -3458,6 +3710,12 @@
           "price": 797.99,
           "original_price": 839.99,
           "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 797.99,
+          "original_price": 839.99,
+          "discount_pct": 5.0
         }
       ],
       "lowest_price_ever": 797.99
@@ -3536,6 +3794,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 601.59,
+          "original_price": 639.99,
+          "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 601.59,
           "original_price": 639.99,
           "discount_pct": 6.0
@@ -3692,6 +3956,18 @@
           "price": 671.04,
           "original_price": 699.0,
           "discount_pct": 4.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 700.79,
+          "original_price": 729.99,
+          "discount_pct": 4.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 671.04,
+          "original_price": 699.0,
+          "discount_pct": 4.0
         }
       ],
       "lowest_price_ever": 671.04
@@ -3749,6 +4025,12 @@
           "price": 846.71,
           "original_price": 881.99,
           "discount_pct": 4.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 846.71,
+          "original_price": 881.99,
+          "discount_pct": 4.0
         }
       ],
       "lowest_price_ever": 846.71
@@ -3797,6 +4079,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 796.79,
+          "original_price": 829.99,
+          "discount_pct": 4.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 796.79,
           "original_price": 829.99,
           "discount_pct": 4.0
@@ -3881,6 +4169,12 @@
           "price": 601.59,
           "original_price": 639.99,
           "discount_pct": 6.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 601.59,
+          "original_price": 639.99,
+          "discount_pct": 6.0
         }
       ],
       "lowest_price_ever": 601.59
@@ -3959,6 +4253,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 814.79,
+          "original_price": 839.99,
+          "discount_pct": 3.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 814.79,
           "original_price": 839.99,
           "discount_pct": 3.0
@@ -4043,6 +4343,12 @@
           "price": 521.85,
           "original_price": 537.99,
           "discount_pct": 3.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 521.85,
+          "original_price": 537.99,
+          "discount_pct": 3.0
         }
       ],
       "lowest_price_ever": 521.85
@@ -4121,6 +4427,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 805.09,
+          "original_price": 829.99,
+          "discount_pct": 3.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 805.09,
           "original_price": 829.99,
           "discount_pct": 3.0
@@ -4604,6 +4916,12 @@
           "price": 464.07,
           "original_price": 499.0,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 464.07,
+          "original_price": 499.0,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 464.07
@@ -4661,14 +4979,20 @@
           "price": 549.9,
           "original_price": null,
           "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 549.9,
+          "original_price": null,
+          "discount_pct": null
         }
       ],
       "lowest_price_ever": 549.9
     },
     "Kabum::jogo-mario-kart-world-nintendo-switch-2": {
-      "title": "Jogo Mario Kart World - Nintendo Switch 2",
+      "title": "Jogo Mario Kart World Nintendo Switch 2",
       "store": "Kabum",
-      "url": "https://www.kabum.com.br/produto/954144/jogo-mario-kart-world-nintendo-switch-2",
+      "url": "https://www.kabum.com.br/produto/1007872/jogo-mario-kart-world-nintendo-switch-2",
       "currency": "BRL",
       "history": [
         {
@@ -4718,6 +5042,18 @@
           "price": 739.9,
           "original_price": null,
           "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 739.9,
+          "original_price": null,
+          "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 1084.79,
+          "original_price": 1129.99,
+          "discount_pct": 4.0
         }
       ],
       "lowest_price_ever": 739.9
@@ -6587,6 +6923,12 @@
           "price": 352.47,
           "original_price": 391.63,
           "discount_pct": 10.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 352.47,
+          "original_price": 391.63,
+          "discount_pct": 10.0
         }
       ],
       "lowest_price_ever": 352.47
@@ -6632,6 +6974,12 @@
           "price": 409.9,
           "original_price": 440.75,
           "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 409.9,
+          "original_price": 440.75,
+          "discount_pct": 7.0
         }
       ],
       "lowest_price_ever": 409.9
@@ -6674,6 +7022,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 435.9,
+          "original_price": 468.71,
+          "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 435.9,
           "original_price": 468.71,
           "discount_pct": 7.0
@@ -6773,6 +7127,12 @@
           "price": 187.42,
           "original_price": 369.9,
           "discount_pct": 49.3
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 187.42,
+          "original_price": 369.9,
+          "discount_pct": 49.3
         }
       ],
       "lowest_price_ever": 187.42
@@ -6809,6 +7169,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 177.34,
+          "original_price": null,
+          "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 177.34,
           "original_price": null,
           "discount_pct": null
@@ -6851,6 +7217,12 @@
           "price": 338.24,
           "original_price": 499.9,
           "discount_pct": 32.3
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 338.24,
+          "original_price": 499.9,
+          "discount_pct": 32.3
         }
       ],
       "lowest_price_ever": 338.24
@@ -6890,6 +7262,12 @@
           "price": 233.0,
           "original_price": null,
           "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 233.0,
+          "original_price": null,
+          "discount_pct": null
         }
       ],
       "lowest_price_ever": 233.0
@@ -6926,6 +7304,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 373.0,
+          "original_price": null,
+          "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 373.0,
           "original_price": null,
           "discount_pct": null
@@ -7019,6 +7403,18 @@
           "price": 417.91,
           "original_price": 439.9,
           "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 387.0,
+          "original_price": null,
+          "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 417.91,
+          "original_price": 439.9,
+          "discount_pct": 5.0
         }
       ],
       "lowest_price_ever": 387.0
@@ -7049,6 +7445,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 277.0,
+          "original_price": 379.9,
+          "discount_pct": 27.1
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 277.0,
           "original_price": 379.9,
           "discount_pct": 27.1
@@ -7085,6 +7487,12 @@
           "price": 3848.0,
           "original_price": 4947.37,
           "discount_pct": 22.2
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 3848.0,
+          "original_price": 4947.37,
+          "discount_pct": 22.2
         }
       ],
       "lowest_price_ever": 3848.0
@@ -7115,6 +7523,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 3759.0,
+          "original_price": 4947.37,
+          "discount_pct": 24.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 3759.0,
           "original_price": 4947.37,
           "discount_pct": 24.0
@@ -7151,6 +7565,12 @@
           "price": 368.21,
           "original_price": null,
           "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 368.21,
+          "original_price": null,
+          "discount_pct": null
         }
       ],
       "lowest_price_ever": 368.21
@@ -7181,6 +7601,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 268.5,
+          "original_price": 299.0,
+          "discount_pct": 10.2
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 268.5,
           "original_price": 299.0,
           "discount_pct": 10.2
@@ -7217,6 +7643,12 @@
           "price": 417.91,
           "original_price": 439.9,
           "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 417.91,
+          "original_price": 439.9,
+          "discount_pct": 5.0
         }
       ],
       "lowest_price_ever": 417.91
@@ -7247,6 +7679,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 417.91,
+          "original_price": 439.9,
+          "discount_pct": 5.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 417.91,
           "original_price": 439.9,
           "discount_pct": 5.0
@@ -7400,6 +7838,12 @@
           "price": 88.71,
           "original_price": null,
           "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 88.71,
+          "original_price": null,
+          "discount_pct": null
         }
       ],
       "lowest_price_ever": 88.71
@@ -7433,6 +7877,12 @@
         },
         {
           "date": "2026-11-15T18:15:24.034088+00:00",
+          "price": 499.9,
+          "original_price": 537.53,
+          "discount_pct": 7.0
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
           "price": 499.9,
           "original_price": 537.53,
           "discount_pct": 7.0
@@ -7481,6 +7931,12 @@
           "price": 371.52,
           "original_price": null,
           "discount_pct": null
+        },
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 371.52,
+          "original_price": null,
+          "discount_pct": null
         }
       ],
       "lowest_price_ever": 371.52
@@ -7499,7 +7955,22 @@
         }
       ],
       "lowest_price_ever": 373.0
+    },
+    "Promobit (Amazon)::powera-case-de-prote-o-para-nintendo-switch-2-hyrule-crest-oficialmente-licenciado-estojo-de-prote-o-armazena": {
+      "title": "PowerA Case de Proteção para Nintendo Switch 2 - Hyrule Crest Oficialmente licenciado Estojo de proteção Armazena",
+      "store": "Promobit (Amazon)",
+      "url": "https://www.promobit.com.br/oferta/powera-case-de-protecao-para-nintendo-switch-2-hyrule-crest-oficialmente-licenciado-estojo-de-protecao-armazena-3219632-3219632/",
+      "currency": "BRL",
+      "history": [
+        {
+          "date": "2026-11-16T21:26:10.062622+00:00",
+          "price": 132.08,
+          "original_price": 197.0,
+          "discount_pct": 33.0
+        }
+      ],
+      "lowest_price_ever": 132.08
     }
   },
-  "last_updated": "2026-11-15T18:15:24.034088+00:00"
+  "last_updated": "2026-11-16T21:26:10.062622+00:00"
 }
